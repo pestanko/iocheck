@@ -1,4 +1,4 @@
-name: SIOT Tests
+name: Tests
 
 on:
   push:
