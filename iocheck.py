@@ -292,7 +292,7 @@ class AppConfig:
 def main(args):
     parser = make_cli_parser()
     args = parser.parse_args(args)
-    load_logger()
+    load_logger(args.log_level)
 
     app_config = _make_config(args)
     tests = gather_tests(app_config.tests_path)
@@ -340,6 +340,8 @@ def make_cli_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(NAME, description=DESC)
     parser.set_defaults(func=None)
     parser.add_argument('--version', action='version', version=f'{NAME}: {VERSION}')
+    parser.add_argument("-L", "--log-level", type=str,
+                        help="Set log level (DEBUG|INFO|WARNING|ERROR)", default=None)
     parser.add_argument('executable', type=str,
                         help="Location of the executable you would like to df")
     parser.add_argument('-T', '--tests', type=str, help='Location of the tests directory',

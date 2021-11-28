@@ -13,6 +13,12 @@ wget  https://raw.githubusercontent.com/pestanko/iocheck/master/iocheck.py
 
 Take a look at [examples](./examples) how to develop a tests for your executable.
 
+Show the help:
+
+```shell
+python -m iocheck --help
+```
+
 ## Tests structure
 
 The ``iocheck`` tests are simple comparison of expected `stdout`, `stderr` and return/exit code with the ones,
